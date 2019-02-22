@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>新的表單工具-數值資料</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+            function printValue(siliderID, textbox) {
+                var x = document.getElementById(textbox);
+                var y = document.getElementById(sliderID);
+                x.value = y.value;
+            }
+            window.onload = function() { printValue('rangel','rangeValue1'); }
+        </script>
+        <form action="#" method="get">
+            <fieldset>
+                <p>數字：<br />
+                    <input type="number" name="user_number" min="-10" max="10" step="2" value="4"/></p>
+                <p>數值範圍：<br />
+                    <input type="range" name="user_range" id="range1" min="-10" max="10" step="2" value="4" onchange="printValue('range1','rangeValue1')" />
+                           <input id="rangeValue1" type="text" size="2" readonly />
+                </P>
+                <input type="submit" />
+            </fieldset>
+        </form>
+    </body>
+</html>
